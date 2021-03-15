@@ -11,7 +11,7 @@ print('Dados de abastecimento ou trocar o óleo? ')
 print('[ 1 ] ABASTECIMENTO \n[ 2 ] TROCA DE ÓLEO \n[ 3 ] FINALIZAR ')
 opção = int(input('Digite a opção desejada: '))
 
-while opção != 3:
+while opção <= 3:
 
 # Se for dados de abastecimento...
     if opção == 1:
@@ -20,7 +20,8 @@ while opção != 3:
         km_inic = float(input('Informe o km atual: '))
         km_final = float(input('Informe o km inicial: '))
         qtde_comb = float(input('Informe a quantidade de combustivél: '))
-        print('Seu veicúlo está fazendo {:.3f} kms por litro.'.format((km_inic-km_final)/qtde_comb))
+        print('Seu veicúlo está fazendo {:.3f} kms por litro.'.format((km_final-km_inic)/qtde_comb))
+        break
 
 # Se for troca de óleo...
     if opção == 2:
@@ -28,16 +29,18 @@ while opção != 3:
         sleep(0.6)
         km_inic = float(input('Informe o km inicial: '))
         km_final = float(input('Informe o km final: '))
-        print('Você rodou {} com o ultimo óleo trocado.'.format(km_inic-km_final))
+        print('Você rodou {} com o ultimo óleo trocado.'.format(km_final-km_inic))
+        break
 
 # Caso a opção for finalizar.
     if opção == 3:
         print('Finalizando...')
         sleep(1)
+        break
 
 # Caso digite uma opção inválida...
     else:
         print('Não há a opção \033[0:31m{}\033[m no menu. Tente novamente!'.format(opção))
-
+        break
 print('Obrigado por utilizar nossos serviços!')
 
